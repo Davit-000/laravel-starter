@@ -7,13 +7,15 @@ import VeeValidate from 'vee-validate';
 import { store} from "./store";
 import { routes } from "./routes";
 import { csrf } from './bootstrap';
-
-Vue.prototype.$csrf = csrf;
+import Snackbar from "./facades/Snackbar";
 
 Vue.use(Vuex);
 Vue.use(Vuetify);
 Vue.use(VueRouter);
 Vue.use(VeeValidate);
+
+Vue.prototype.$csrf = csrf;
+Vue.component('snackbar', require('./components/Snackbar').default);
 
 const el = document.getElementById('app');
 
@@ -27,6 +29,8 @@ new Vue({
     router: new VueRouter({routes, mode: 'history'}),
     vuetify: new Vuetify({ iconfont: 'mdi' }),
     created() {
-        this.$store.commit('INITAUTH', this.auth)
+        new Snackbar(this.$store);
+
+        this.$store.commit('INITAUTH', this.auth);
     }
 });

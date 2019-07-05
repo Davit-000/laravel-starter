@@ -4,6 +4,13 @@ export const store = {
         auth: {
             check: false,
             user: null
+        },
+        snackbar: {
+            timeout: undefined,
+            color: undefined,
+            text: '',
+            show: false,
+            action: undefined
         }
     },
     getters: {
@@ -29,6 +36,9 @@ export const store = {
          */
         TOGGLEMINI(state, payload) {
             state.mini = payload;
+        },
+        SNACKBAR(state, payload) {
+            state.snackbar = {...payload};
         }
     },
     actions: {

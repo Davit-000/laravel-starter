@@ -33,7 +33,7 @@
             <!-- -->
         </v-footer>
 
-{{--        <snackbar></snackbar>--}}
+        <snackbar></snackbar>
     </v-app>
 </div>
 </body>

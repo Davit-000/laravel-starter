@@ -11,8 +11,13 @@
 </template>
 
 <script>
+    import Snackbar from "../facades/Snackbar";
+
     export default {
-        name: "Dashboard"
+        name: "Dashboard",
+        created() {
+            Snackbar.success('text');
+        }
     }
 </script>
 

@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+//        "noImplicitUseStrict": true,
+        "noImplicitAny": false,
+        "sourceMap": false,
+        "allowJs": true,
+        "strict": true,
+        "moduleResolution": "node",
+        "module": "commonjs",
+        "target": "es5"
+    },
+    "include": ["resources/ts/**/*"]
+}

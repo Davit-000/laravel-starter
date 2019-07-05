@@ -147,7 +147,7 @@
                     case 1:
                         this.loading = true;
                         this.$refs.username.blur();
-                        this.$validator.validateAll('username').then(valid => {
+                        this.$validator.validate('username').then(valid => {
                             if (valid) this.step++;
 
                             this.loading = false;
