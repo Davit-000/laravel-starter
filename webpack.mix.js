@@ -11,6 +11,8 @@ const mix = require('laravel-mix');
  |
  */
 
+ /* App bundle */
+
 // mix.js('resources/js/app.js', 'public/js')
 //     .sass('resources/sass/app.scss', 'public/css')
 //     .webpackConfig({
@@ -40,11 +42,33 @@ const mix = require('laravel-mix');
 //         }
 //     }).version();
 
-mix.js('resources/js/admin/admin.js', 'public/js/admin/admin.js')
-    .sass('resources/sass/admin/admin.scss', 'public/css/admin/admin.css')
+/* Admin bundle */
+
+mix.js('resources/js/admin/admin.js', 'public/js/admin')
+    .sass('resources/sass/app.scss', 'public/css')
     .webpackConfig({
         output: {
             chunkFilename: 'js/admin/chunk/[name].js',
         },
     }).version();
 
+// mix.ts('resources/ts/admin/app.ts', 'public/ts/admin')
+//     .sass('resources/sass/app.scss', 'public/css')
+//     .webpackConfig({
+//         output: {
+//             chunkFilename: 'js/admin/chunk/[name].js',
+//         },
+//         module: {
+//             rules: [
+//                 {
+//                     test: /\.tsx?$/,
+//                     loader: "ts-loader",
+//                     exclude: /node_modules/,
+//                     options: { appendTsSuffixTo: [/\.vue$/] }
+//                 }
+//             ]
+//         },
+//         resolve: {
+//             extensions: ["*", ".js", ".jsx", ".vue", ".ts", ".tsx"]
+//         }
+//     }).version();
